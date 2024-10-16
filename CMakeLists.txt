@@ -23,3 +23,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 # build glm
 add_subdirectory(${EXTERNAL_DIR}/glm)
 target_link_libraries(${PROJECT_NAME} PRIVATE glm::glm)
+
+add_subdirectory(${EXTERNAL_DIR}/glad)
+target_link_libraries(${PROJECT_NAME} PRIVATE glad)
