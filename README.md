@@ -30,10 +30,10 @@ cmake -DCMAKE_BUILD_TYPE=debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -B build .
 All files in the src/ directory get added as source files. Corresponding headers can be stored in the include/ directory.
 A `.clang-format` file is provided. You can of course format youre code however you want, but it is important, that you disable `SortIncludes` or similar settings, since glfw always has to be imported after glad.
 
-## Ressources
+## Resources
 
-Ressources like shaders, images, models etc. that will be imported in the Program can be placed in additional directories, like the shaders/ directory in the example project.
-To ensure all paths in the program to these ressources are always valid I would recommend setting the path as a compile definition in the CMake file. This way all paths stay absolute and change automatically when you move the project directory.
+Resources like shaders, images, models etc. that will be imported in the Program can be placed in additional directories, like the shaders/ directory in the example project.
+To ensure all paths in the program to these resources are always valid I would recommend setting the path as a compile definition in the CMake file. This way all paths stay absolute and change automatically when you move the project directory.
 
 ## CMake
 
