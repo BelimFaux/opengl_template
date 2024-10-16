@@ -1,5 +1,4 @@
 #include <cstring>
-#include <linux/input.h>
 #include <string>
 
 #define GLAD_GL_IMPLEMENTATION
@@ -102,13 +101,14 @@ int main(void) {
     while (!glfwWindowShouldClose(window)) {
         int width, height;
         glfwGetFramebufferSize(window, &width, &height);
+        const float ratio = width / (float)height;
 
         glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glm::mat4 projection = glm::ortho(-1.f, 1.f, 1.f, -1.f);
+        glm::mat4 projection = glm::ortho(-ratio, ratio, 1.f, -1.f);
         glm::mat4 model = glm::mat4(1.0);
-        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0, 0, 1));
+        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(1, 1, 1));
 
         glm::mat4 mvp = projection * model;
 
