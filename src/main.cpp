@@ -28,9 +28,9 @@ typedef struct Vertex {
     glm::vec3 col;
 } Vertex;
 
-static const Vertex vertices[3] = {{{-0.6f, -0.4f}, {1.f, 0.f, 0.f}},
-                                   {{0.6f, -0.4f}, {0.f, 1.f, 0.f}},
-                                   {{0.f, 0.6f}, {0.f, 0.f, 1.f}}};
+static const Vertex vertices[3] = {{{-.6f, -.5f}, {1.f, 0.f, 0.f}},
+                                   {{.6f, -.5f}, {0.f, 1.f, 0.f}},
+                                   {{.0f, .6f}, {0.f, 0.f, 1.f}}};
 
 static const char *title{PRG_NAME " " PRG_VERSION};
 
@@ -106,9 +106,9 @@ int main(void) {
         glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glm::mat4 projection = glm::ortho(-ratio, ratio, 1.f, -1.f);
+        glm::mat4 projection = glm::ortho(-ratio, ratio, -1.f, 1.f);
         glm::mat4 model = glm::mat4(1.0);
-        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(1, 1, 1));
+        model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0, 0, 1));
 
         glm::mat4 mvp = projection * model;
 
